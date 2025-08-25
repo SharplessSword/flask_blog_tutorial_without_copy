@@ -1,0 +1,19 @@
+[project]
+name = "flask-tutorial-without-copy"
+version = "0.1.0"
+description = "flask learning project"
+authors = [
+    {name = "gao", email = "gaojingru.cn@gmail.com"},
+]
+dependencies = ["flask>=3.1.1"]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
