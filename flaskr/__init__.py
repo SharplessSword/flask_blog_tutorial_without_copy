@@ -14,7 +14,8 @@ def create_app():
     @app.route('/hello')
     def hello():
         return "hello, world"
-    from . import db
+    from . import db, auth
     db.init_app(app)
+    app.register_blueprint(auth.bp)
 
     return app
