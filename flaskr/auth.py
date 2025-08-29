@@ -18,7 +18,8 @@ def register():
             error = 'Password is required'
         if error is None:
             try:
-                db.execute("INSERT INTO user(username, password) VALUES (?, ?)")
+                db.execute("INSERT INTO user(username, password) VALUES (?, ?)",
+                           (username, generate_password_hash(password)), )
                 db.commit()
             except db.IntegrityError:
                 error = f'User {username} is already registered.'
@@ -72,3 +73,4 @@ def login_required(view):
             return redirect(url_for('auth.login'))
         return view(**kwargs)
     return wrapped_view
+
