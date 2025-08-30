@@ -5,7 +5,7 @@ description = "flask learning project"
 authors = [
     {name = "gao", email = "gaojingru.cn@gmail.com"},
 ]
-dependencies = ["flask>=3.1.1"]
+dependencies = ["flask>=3.1.1", "pytest>=8.4.1", "coverage>=7.10.6"]
 requires-python = ">=3.12"
 readme = "README.md"
 license = {text = "MIT"}
