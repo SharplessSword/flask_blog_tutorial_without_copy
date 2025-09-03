@@ -57,10 +57,10 @@ def load_logged_in_user():
     if user_id is None:
         g.user = None
     else:
-        g.user = get_db().execute('SELECT * from user where id = *', (user_id, )).fetchone()
+        g.user = get_db().execute('SELECT * from user where id = ?', (user_id, )).fetchone()
 
 
-@bp.route('logout')
+@bp.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('index'))
